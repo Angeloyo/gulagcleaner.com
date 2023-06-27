@@ -4,7 +4,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'gulag-blue': '#e2edff',
+        'gulag-blue': '#024fff',
+        'gulag-blue-light': '#e2edff'
       },
     },
   },
