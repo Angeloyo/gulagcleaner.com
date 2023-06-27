@@ -901,6 +901,18 @@ video {
     min-height: 95vh;
   }
 
+  .md\:min-h-\[90vh\] {
+    min-height: 90vh;
+  }
+
+  .md\:min-h-\[91vh\] {
+    min-height: 91vh;
+  }
+
+  .md\:min-h-\[92vh\] {
+    min-height: 92vh;
+  }
+
   .md\:w-1\/2 {
     width: 50%;
   }
