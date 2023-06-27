@@ -950,6 +950,10 @@ video {
     margin-bottom: 1.25rem;
   }
 
+  .md\:mt-\[38rem\] {
+    margin-top: 38rem;
+  }
+
   .md\:block {
     display: block;
   }
