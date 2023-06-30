@@ -7,7 +7,9 @@ module.exports = {
       colors: {
         'gulag-blue': '#024fff',
         'gulag-blue-light': '#e2edff',
-        'blue-light': '#c7dcfc'
+        'blue-light': '#c7dcfc',
+        'gulag-dark': '#171717',
+        'gulag-dark-body': '#202124'
       },
     },
   },
