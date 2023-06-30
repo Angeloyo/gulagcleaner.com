@@ -1,7 +1,9 @@
 // Icons and img
 const sunIcon = document.getElementById("sun");
 const moonIcon = document.getElementById("moon");
-const switchButton = document.getElementById("switchButton");
+const switchButton = document.getElementById("switchButton")
+const blackBanner = document.getElementById("banner-black");
+const whiteBanner = document.getElementById("banner-white");
 
 // Theme vars
 const userTheme = localStorage.getItem("theme");
@@ -13,6 +15,8 @@ const iconToggle = () => {
     // sunIcon.classList.toggle("hidden");
     moonIcon.classList.toggle("display-none");
     sunIcon.classList.toggle("display-none");
+    blackBanner.classList.toggle("display-none");
+    whiteBanner.classList.toggle("display-none");
 }
 
 // Initial Theme check
@@ -21,12 +25,12 @@ const themeCheck = () => {
         document.documentElement.classList.add("dark");
         // moonIcon.classList.add("hidden");
         moonIcon.classList.add("display-none");
-        blackLenin.classList.toggle("display-none");
+        blackBanner.classList.toggle("display-none");
 
         return;
     }
     sunIcon.classList.add("display-none");
-    whiteLenin.classList.toggle("display-none");
+    whiteBanner.classList.toggle("display-none");
 
 }
 
