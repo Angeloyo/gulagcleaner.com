@@ -1,7 +1,10 @@
 // Icons and img
 const sunIcon = document.getElementById("sun");
 const moonIcon = document.getElementById("moon");
-const switchButton = document.getElementById("switchButton")
+const sunIcon2 = document.getElementById("sun2");
+const moonIcon2 = document.getElementById("moon2");
+const switchButton = document.getElementById("switchButton");
+const switchButton2 = document.getElementById("switchButton2");
 const blackBanner = document.getElementById("banner-black");
 const whiteBanner = document.getElementById("banner-white");
 
@@ -15,6 +18,8 @@ const iconToggle = () => {
     // sunIcon.classList.toggle("hidden");
     moonIcon.classList.toggle("display-none");
     sunIcon.classList.toggle("display-none");
+    moonIcon2.classList.toggle("display-none");
+    sunIcon2.classList.toggle("display-none");
     blackBanner.classList.toggle("display-none");
     whiteBanner.classList.toggle("display-none");
 }
@@ -25,11 +30,12 @@ const themeCheck = () => {
         document.documentElement.classList.add("dark");
         // moonIcon.classList.add("hidden");
         moonIcon.classList.add("display-none");
+        moonIcon2.classList.add("display-none");
         blackBanner.classList.toggle("display-none");
-
         return;
     }
     sunIcon.classList.add("display-none");
+    sunIcon2.classList.add("display-none");
     whiteBanner.classList.toggle("display-none");
 
 }
@@ -51,5 +57,18 @@ switchButton.addEventListener("click", () => {
     themeSwitch();
 });
 
+switchButton2.addEventListener("click", () => {
+    themeSwitch();
+});
+
 // Invoke theme check on initial load
 themeCheck();
+
+document.getElementById("menu-button").addEventListener("click", function() {
+    var menuItems = document.getElementById("menu-items");
+    if (menuItems.classList.contains("hidden")) {
+        menuItems.classList.remove("hidden");
+    } else {
+        menuItems.classList.add("hidden");
+    }
+});

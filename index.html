@@ -14,46 +14,68 @@
 <body class="flex flex-col min-h-screen dark:bg-gulag-dark-body" style="font-family: 'Roboto', sans-serif;">
 
     <!-- navbar -->
-    <header class="bg-gulag-blue-light drop-shadow-lg dark:bg-gulag-dark ">
-        <nav class="flex flex-col lg:flex-row items-center justify-between p-7 text-black lg:h-16">
-          <div>
-            <a href="https://gulagcleaner.com/">
-                <img id="banner-black" class="w-56" src="./img/bannericon.png" alt="Banner Gulag">
-                <img id="banner-white" class="w-56" src="./img/bannericon-white.png" alt="Banner Gulag">
-            </a>
-          </div>
-          <div class=" flex flex-col lg:flex-row">
-            
-            <div class="flex justify-center items-center">
 
+
+    
+    <header class="bg-gulag-blue-light drop-shadow-lg dark:bg-gulag-dark ">
+        <nav class="flex flex-col md:flex-row items-center justify-between  text-black md:h-16">
+            <div class="flex justify-between items-center w-full md:w-auto h-16">
+                <a class="ml-2" href="https://gulagcleaner.com/">
+                    <img id="banner-black" class="w-56" src="./img/bannericon.png" alt="Banner Gulag">
+                    <img id="banner-white" class="w-56" src="./img/bannericon-white.png" alt="Banner Gulag">
+                </a>
+                <button id="menu-button" class="ml-3 md:hidden bg-white dark:bg-slate-500 rounded-md flex items-center justify-center mr-2 w-11 h-11 text-lg md:my-3 ">
+                    <!-- ícono de menú -->
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="text-black dark:text-white">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="hidden md:flex justify-center items-center">
+                <!-- Aquí va el mismo código que tienes actualmente para el botón de switch, el link a GitHub y el link a ko-fi -->
                 <button id="switchButton" class="ml-3  bg-white dark:bg-slate-500 rounded-md 
-                flex items-center justify-center hover:ring mt-4 mb-2 mr-2 w-11 h-11 text-lg lg:my-3 ">
+                flex items-center justify-center hover:ring mt-4 mb-2 mr-2 w-11 h-11 text-lg md:my-3 ">
                     <div id="moon" >    
-                        <svg  class=" lg:inline-block fill-black" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#ffffff}</style><path d="M223.5 32C100 32 0 132.3 0 256S100 480 223.5 480c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"/></svg>
+                        <svg  class=" md:inline-block fill-black" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#ffffff}</style><path d="M223.5 32C100 32 0 132.3 0 256S100 480 223.5 480c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"/></svg>
                     </div>
                     <div id="sun">
-                        <svg  class=" lg:inline-block " xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#ffffff}</style><path d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391 371.1 498.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121 140.9 13.1c1-5.3 4.6-9.8 9.6-11.9s10.7-1.5 15.2 1.6L256 65.1 346.3 2.8c4.5-3.1 10.2-3.7 15.2-1.6zM160 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z"/></svg>
+                        <svg  class=" md:inline-block " xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#ffffff}</style><path d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391 371.1 498.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121 140.9 13.1c1-5.3 4.6-9.8 9.6-11.9s10.7-1.5 15.2 1.6L256 65.1 346.3 2.8c4.5-3.1 10.2-3.7 15.2-1.6zM160 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z"/></svg>
                     </div>
                 </button>
                 <a target="_blank" href="https://github.com/YM162/gulagcleaner" class=" hover:ring
-                text-center block lg:inline-block mt-4 mb-2 mr-2 py-2 px-3 lg:my-3 bg-white dark:bg-slate-500 
-                 rounded-md  text-lg  dark:text-white text-black">GitHub
+                text-center block md:inline-block mt-4 mb-2 mr-2 py-2 px-3 md:my-3 bg-white dark:bg-slate-500 
+                rounded-md  text-lg  dark:text-white text-black">GitHub
                 </a>
-
+                <a target="_blank" href="https://ko-fi.com/gulagcleaner" class="hover:ring 
+                    text-center block md:inline-block  bg-gulag-blue text-white rounded-md 
+                    text-lg md:my-3 py-2 px-3 mr-2
+                    ">¿Te gusta nuestro trabajo?
+                </a>
             </div>
-
-            <a target="_blank" href="https://ko-fi.com/gulagcleaner" class="hover:ring 
-                text-center block lg:inline-block  bg-gulag-blue text-white rounded-md 
-                text-lg lg:my-3 py-2 px-3
-                 ">¿Te gusta nuestro trabajo?
-            </a>
-          </div>
+            <div id="menu-items" class="hidden flex flex-col justify-center items-center md:hidden w-full ">
+                <div class="flex">
+                    <button id="switchButton2" class="bg-white dark:bg-slate-500 rounded-md 
+                    flex items-center justify-center mt-4 mb-2 mr-2 w-11 h-11 text-lg ">
+                        <div id="moon2" >    
+                            <svg  class=" md:inline-block fill-black" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#ffffff}</style><path d="M223.5 32C100 32 0 132.3 0 256S100 480 223.5 480c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"/></svg>
+                        </div>
+                        <div id="sun2">
+                            <svg  class=" md:inline-block " xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#ffffff}</style><path d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391 371.1 498.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121 140.9 13.1c1-5.3 4.6-9.8 9.6-11.9s10.7-1.5 15.2 1.6L256 65.1 346.3 2.8c4.5-3.1 10.2-3.7 15.2-1.6zM160 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z"/></svg>
+                        </div>
+                    </button>
+                    <!-- Link a GitHub -->
+                    <a target="_blank" href="https://github.com/YM162/gulagcleaner" class=" hover:ring text-center block md:inline-block mt-4 mb-2 mr-2 py-2 px-3 md:my-3 bg-white dark:bg-slate-500 rounded-md text-lg  dark:text-white text-black">GitHub</a>
+                </div>
+                <!-- Link a ko-fi -->
+                <a target="_blank" href="https://ko-fi.com/gulagcleaner" class="hover:ring text-center block md:inline-block  
+                bg-gulag-blue text-white rounded-md text-lg mb-5 py-2 px-3">¿Te gusta nuestro trabajo?</a>
+            </div>
         </nav>
-      </header>
+    </header>
       
     <main>
         <!-- lugar donde está la funcionalidad -->
-        <div class="min-h-[78vh] md:min-h-[94vh] text-center pt-14 mx-10 md:mx-24">
+        <div class="min-h-[94vh] md:min-h-[94vh] text-center pt-14 mx-10 md:mx-24">
             <h1 class="text-4xl md:text-5xl dark:text-white">Eliminar publicidad</h1>
             <h2 class="hidden md:block text-2xl mt-4 dark:text-white">Suelta uno o varios PDFs desde el recuadro para eliminar la publicidad 
                 de tus apuntes.</h2>
