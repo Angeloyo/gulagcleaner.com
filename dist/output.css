@@ -797,6 +797,10 @@ video {
   fill: #fff;
 }
 
+.fill-current {
+  fill: currentColor;
+}
+
 .p-7 {
   padding: 1.75rem;
 }
