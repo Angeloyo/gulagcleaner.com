@@ -80,9 +80,11 @@
             <!-- Diferente texto en versión móvil -->
             <h2 class="block md:hidden text-2xl mt-4 dark:text-white">Selecciona uno o varios PDFs en el recuadro para eliminar la publicidad 
                 de tus apuntes.</h2>
-            <button class="text-2xl md:text-4xl bg-gulag-blue rounded-md mt-7 text-white px-3 py-3 
-            md:px-6 md:py-6">Seleccionar archivo PDF</button>
+            <button class="dropzone text-2xl md:text-4xl bg-gulag-blue rounded-md mt-7 text-white px-3 py-3 
+            md:px-6 md:py-6" id="PDFDrop" action="/action"></button>
             <!-- <p class="">O arrastra y suelta el PDF aquí</p> -->
+            <div class="mt-4 mb-2 text-xl" id="selectedFilesHeader">Archivos seleccionados:</div>
+            <div id="filePreviews"></div>
         </div>
 
         <!-- iconitos y texto -->
@@ -163,6 +165,12 @@
         
     </footer>
     
-    <script src="./js/app.js"></script>
+    <!-- Gulag Cleaner Functionality-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+    <script src="./js/gulag_functions.js" type="text/javascript"></script>
+    <script src="./js/wasm_functions.js" type="module"></script>
+    <script src="./js/frontend.js"></script>
+
 </body>
 </html>
