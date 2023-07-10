@@ -788,6 +788,11 @@ video {
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
+.text-gulag-blue {
+  --tw-text-opacity: 1;
+  color: rgb(2 79 255 / var(--tw-text-opacity));
+}
+
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -810,6 +815,10 @@ video {
   display: none;
   margin-left: auto;
   margin-right: auto;
+}
+
+#restartProcess{
+  display: none;
 }
 
 /* Sombras para el tema claro */

@@ -141,8 +141,9 @@ async function process_upload() {
   //     change_to_progress_bar_page_multi()
   // }
 
-  downloadfile()
+  downloadfile();
 
+  document.getElementById('restartProcess').style.display = 'block';
 }
 
 //Dropzone configuration
@@ -174,6 +175,7 @@ Dropzone.options.PDFDrop = {
       if (this.files.length === 1) {
         document.getElementById('selectedFilesHeader').style.display = 'block';
         document.getElementById('removeAdsButton').style.display = 'block';
+        // document.getElementById('restartProcess').style.display = 'block';
       }
     });
   },
