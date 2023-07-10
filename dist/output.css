@@ -648,6 +648,14 @@ video {
   min-height: 100vh;
 }
 
+.min-h-\[80vh\] {
+  min-height: 80vh;
+}
+
+.min-h-\[82vh\] {
+  min-height: 82vh;
+}
+
 .w-11 {
   width: 2.75rem;
 }
