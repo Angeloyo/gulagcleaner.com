@@ -59,12 +59,12 @@ async function downloadfile() {
 
 //Function to update the progrss bar to a given percentage (0 to 100)
 function update_percentage(prc) {
-  let percentage = document.querySelector('.percentage');
+  // let percentage = document.querySelector('.percentage');
   let percentageValue = Math.round(prc)
   let progress = document.querySelector('.progress');
 
-  percentage.textContent = percentageValue + "%";
-  progress.setAttribute('style', `width:${percentageValue}%`);
+  // percentage.textContent = percentageValue + "%";
+  // progress.setAttribute('style', `width:${percentageValue}%`);
 }
 
 //Function to add an upper button when there are a lot of files in the dropzone
@@ -79,17 +79,17 @@ function add_upper_button() {
 async function process_upload() {
   //We load all the files in the Dropzone
   filearray = Dropzone.instances[0].getAddedFiles()
-  if (filearray.length > 1) {
-      change_to_download_page_multi()
-  } else {
-      change_to_download_page(filearray[0].name)
-  }
+  // if (filearray.length > 1) {
+  //     change_to_download_page_multi()
+  // } else {
+  //     change_to_download_page(filearray[0].name)
+  // }
 
   //This is the array where we will store the cleaned pdfs
   window.cleaned = []
 
   //We initialize the progress bar
-  update_percentage(1)
+  // update_percentage(1)
   chunk = 100 / (filearray.length * 3)
   progress = 0
 
@@ -105,7 +105,7 @@ async function process_upload() {
       await fileLoaded;
       data = new Uint8Array(reader.result)
       progress += chunk
-      update_percentage(progress)
+      // update_percentage(progress)
 
       //We decrypt the pdf and update the progress bar
       decrypted_pdf = await window.decrypt_pdf(data)
@@ -114,7 +114,7 @@ async function process_upload() {
           return
       }
       progress += chunk
-      update_percentage(progress)
+      // update_percentage(progress)
 
       //We clean the pdf and update the progress bar
       cleaned_pdf = await window.clean_pdf(decrypted_pdf)
@@ -123,22 +123,26 @@ async function process_upload() {
           return
       }
       progress += chunk
-      update_percentage(progress)
+      // update_percentage(progress)
 
       //We add the cleaned pdf to the array
       window.cleaned.push([cleaned_pdf, filearray[file_number_w].name])
 
+
   }
 
-  if (window.cleaned.length == 0) {
-      //Error page
-      change_to_error_page()
-  } else if (window.cleaned.length == 1) {
+  // if (window.cleaned.length == 0) {
+  //     //Error page
+  //     change_to_error_page()
+  // } else if (window.cleaned.length == 1) {
 
-      change_to_progress_bar_page(filearray[0].name)
-  } else if (window.cleaned.length > 1) {
-      change_to_progress_bar_page_multi()
-  }
+  //     change_to_progress_bar_page(filearray[0].name)
+  // } else if (window.cleaned.length > 1) {
+  //     change_to_progress_bar_page_multi()
+  // }
+
+  downloadfile()
+
 }
 
 //Dropzone configuration
@@ -169,9 +173,14 @@ Dropzone.options.PDFDrop = {
       // Agrega la visibilidad al encabezado cuando se agrega el primer archivo
       if (this.files.length === 1) {
         document.getElementById('selectedFilesHeader').style.display = 'block';
+        document.getElementById('removeAdsButton').style.display = 'block';
       }
     });
   },
+  accept: function(file, done) {
+  }
+};
+
   // accept: function(file, done) {
   //     file.previewElement.children[2].remove();
   //     file.previewElement.children[1].children[0].remove();
@@ -181,4 +190,3 @@ Dropzone.options.PDFDrop = {
   //     // file.previewElement.querySelector("img").height = 120;
   //     add_upper_button()
   // }
-};

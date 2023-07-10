@@ -640,28 +640,12 @@ video {
   height: 2.25rem;
 }
 
-.min-h-\[78vh\] {
-  min-height: 78vh;
+.min-h-\[84vh\] {
+  min-height: 84vh;
 }
 
 .min-h-screen {
   min-height: 100vh;
-}
-
-.min-h-\[80vh\] {
-  min-height: 80vh;
-}
-
-.min-h-\[82vh\] {
-  min-height: 82vh;
-}
-
-.min-h-\[83vh\] {
-  min-height: 83vh;
-}
-
-.min-h-\[84vh\] {
-  min-height: 84vh;
 }
 
 .w-11 {
@@ -822,6 +806,12 @@ video {
   display: none;
 }
 
+#removeAdsButton {
+  display: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* Sombras para el tema claro */
 
 html:not(.dark) .my-button.dz-drag-hover {
@@ -903,10 +893,6 @@ html.dark .my-button.dz-drag-hover {
 
   .md\:h-16 {
     height: 4rem;
-  }
-
-  .md\:min-h-\[78vh\] {
-    min-height: 78vh;
   }
 
   .md\:w-1\/2 {

@@ -80,9 +80,25 @@
             <!-- Diferente texto en versión móvil -->
             <h2 class="block md:hidden text-2xl mt-4 dark:text-white">Selecciona uno o varios PDFs en el recuadro para eliminar la publicidad 
                 de tus apuntes.</h2>
-            <button class=" dropzone my-button text-2xl md:text-4xl bg-gulag-blue rounded-md mt-7 text-white px-3 py-3 
-            md:px-6 md:py-6" id="PDFDrop" action="/action"></button>
+            <button action="/action" class=" dropzone dz-clickable my-button 
+            text-2xl md:text-4xl bg-gulag-blue rounded-md mt-7 text-white px-3 py-3 
+            md:px-6 md:py-6" id="PDFDrop">
+                <div class="dz-default dz-message">
+                    <span>
+                        Seleccionar archivo PDF
+                    </span>
+                </div>
+            </button>
+            <!-- <form action="/action" class="dropzone dz-clickable" id="PDFDrop">
+                <div class="dz-default dz-message">
+                  <span>
+                    Suelta los PDFs aquí para eliminar la publicidad.
+                    </span>
+                </div>
+              </form> -->
             <!-- <p class="">O arrastra y suelta el PDF aquí</p> -->
+            <button class="text-2xl md:text-4xl bg-gulag-blue rounded-md mt-7 text-white px-3 py-3 
+            md:px-6 md:py-6 " id="removeAdsButton" onclick="process_upload()">Descargar archivos sin publicidad</button>
             <div class="mt-7 mb-2 text-3xl dark:text-white" id="selectedFilesHeader">Archivos seleccionados:</div>
             <div id="filePreviews"></div>
         </div>
