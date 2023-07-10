@@ -165,9 +165,10 @@ Dropzone.options.PDFDrop = {
   dictRemoveFile: "Remove file",
   dictCancelUploadConfirmation: "You really want to delete this file?",
   dictUploadCanceled: "Upload canceled",
-  previewTemplate: `<div class="file-preview text-2xl">
-    <span class="dark:text-white" data-dz-name></span>
+  previewTemplate: `<div class="file-preview ">
+    <span data-dz-name></span>
   </div>`,
+
   previewsContainer: "#filePreviews",
   init: function () {
     this.on('addedfile', function() {

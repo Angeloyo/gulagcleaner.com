@@ -30,3 +30,19 @@ html.dark .my-button.dz-drag-hover {
     box-shadow: 0 0 20px 10px lightblue;
 }
   
+.file-preview {
+    /* display: inline-block; */
+    display: block;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #F3F4F6; 
+    color: black; 
+    text-align: center;
+}
+
+.dark .file-preview {
+    --tw-bg-opacity: 1;
+    background-color: rgb(100 116 139 / var(--tw-bg-opacity));
+    color: white; /* Color de texto para el tema oscuro. */
+}

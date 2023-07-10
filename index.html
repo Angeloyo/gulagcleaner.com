@@ -62,7 +62,7 @@
                         </div>
                     </button>
                     <!-- Link a GitHub -->
-                    <a target="_blank" href="https://github.com/YM162/gulagcleaner" class="  text-center block md:inline-block mt-4 mb-2 mr-2 py-2 px-3 md:my-3 bg-white dark:bg-slate-500 rounded-md text-lg  dark:text-white text-black">GitHub</a>
+                    <a target="_blank" href="https://github.com/YM162/gulagcleaner" class="text-center block md:inline-block mt-4 mb-2 mr-2 py-2 px-3 md:my-3 bg-white dark:bg-slate-500 rounded-md text-lg  dark:text-white text-black">GitHub</a>
                 </div>
                 <!-- Link a ko-fi -->
                 <a target="_blank" href="https://ko-fi.com/gulagcleaner" class=" text-center block md:inline-block  
@@ -75,23 +75,34 @@
         <!-- lugar donde está la funcionalidad -->
         <div class="min-h-[84vh] text-center pt-14 mx-10 md:mx-24">
             <h1 class="text-4xl md:text-5xl dark:text-white">Eliminar publicidad</h1>
+
             <h2 class="hidden md:block text-2xl mt-4 dark:text-white">Suelta uno o varios PDFs desde el recuadro para eliminar la publicidad 
-                de tus apuntes.</h2>
+                de tus apuntes.
+            </h2>
             <!-- Diferente texto en versión móvil -->
             <h2 class="block md:hidden text-2xl mt-4 dark:text-white">Selecciona uno o varios PDFs en el recuadro para eliminar la publicidad 
-                de tus apuntes.</h2>
+                de tus apuntes.
+            </h2>
+
             <button action="/action" class=" dropzone dz-clickable my-button 
             text-2xl md:text-4xl bg-gulag-blue rounded-md mt-7 text-white px-3 py-3 
             md:px-6 md:py-6" id="PDFDrop">
             </button>
+
             <button class="text-2xl md:text-4xl bg-gulag-blue rounded-md mt-7 text-white px-3 py-3 
-            md:px-6 md:py-6 " id="removeAdsButton" onclick="process_upload()">Descargar archivos sin publicidad</button>
-            <div class="mt-7 mb-2 text-3xl dark:text-white" id="selectedFilesHeader">Archivos seleccionados:</div>
-            <div id="filePreviews"></div>
+            md:px-6 md:py-6 " id="removeAdsButton" onclick="process_upload()">Descargar archivos sin publicidad
+            </button>
+
+            <div class="mt-7 mb-2 text-3xl dark:text-white" id="selectedFilesHeader">
+                Archivos seleccionados:</div>
+            
+            <div class="text-2xl rounded-lg" id="filePreviews"></div>
+            
             <div class="mt-7 mb-2 text-xl dark:text-white" id="restartProcess">
                 Para empezar de nuevo el proceso, refresca la página o haz click 
                 <!-- <a class="text-gulag-blue" href="https://gulagcleaner.com">aquí</a></div> -->
-                <a class="text-gulag-blue" href="http://127.0.0.1:5500/">aquí</a></div>
+                <a class="text-gulag-blue" href="http://127.0.0.1:5500/">aquí</a>
+            </div>
         </div>
 
         <!-- iconitos y texto -->
