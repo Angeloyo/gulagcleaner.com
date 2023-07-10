@@ -848,6 +848,14 @@ html.dark .my-button.dz-drag-hover {
   text-align: center;
 }
 
+@media (min-width: 768px) {
+  /* Ajusta este valor a la medida que consideres para pantallas más grandes */
+
+  .file-preview {
+    display: inline-block;
+  }
+}
+
 .dark .file-preview {
   --tw-bg-opacity: 1;
   background-color: rgb(100 116 139 / var(--tw-bg-opacity));
