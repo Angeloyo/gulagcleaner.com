@@ -1,6 +1,7 @@
 // Icons and img
 const sunIcon = document.getElementById("sun");
 const moonIcon = document.getElementById("moon");
+// phone version different icons
 const sunIcon2 = document.getElementById("sun2");
 const moonIcon2 = document.getElementById("moon2");
 const switchButton = document.getElementById("switchButton");

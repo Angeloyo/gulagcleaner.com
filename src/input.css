@@ -8,4 +8,15 @@
 
 #selectedFilesHeader {
     display: none;
-  }
+}
+
+/* Sombras para el tema claro */
+html:not(.dark) .my-button.dz-drag-hover {
+    box-shadow: 0 0 20px 10px grey; 
+}
+
+/* Sombras para el tema oscuro */
+html.dark .my-button.dz-drag-hover {
+    box-shadow: 0 0 20px 10px lightblue;
+}
+  

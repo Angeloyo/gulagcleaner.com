@@ -160,9 +160,8 @@ Dropzone.options.PDFDrop = {
   dictRemoveFile: "Remove file",
   dictCancelUploadConfirmation: "You really want to delete this file?",
   dictUploadCanceled: "Upload canceled",
-  previewTemplate: `<div class="file-preview">
-    <span data-dz-name></span>
-    <span class="dz-size" data-dz-size></span>
+  previewTemplate: `<div class="file-preview text-2xl">
+    <span class="dark:text-white" data-dz-name></span>
   </div>`,
   previewsContainer: "#filePreviews",
   init: function () {
@@ -172,14 +171,6 @@ Dropzone.options.PDFDrop = {
         document.getElementById('selectedFilesHeader').style.display = 'block';
       }
     });
-
-    this.on('removedfile', function() {
-      // Oculta el encabezado cuando se eliminan todos los archivos
-      if (this.files.length === 0) {
-        document.getElementById('selectedFilesHeader').style.display = 'none';
-      }
-    });
-
   },
   // accept: function(file, done) {
   //     file.previewElement.children[2].remove();

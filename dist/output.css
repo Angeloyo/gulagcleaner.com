@@ -552,11 +552,6 @@ video {
   margin-bottom: 1.75rem;
 }
 
-.my-4 {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-
 .mb-2 {
   margin-bottom: 0.5rem;
 }
@@ -587,6 +582,10 @@ video {
 
 .mt-10 {
   margin-top: 2.5rem;
+}
+
+.mt-24 {
+  margin-top: 6rem;
 }
 
 .mt-3 {
@@ -641,8 +640,8 @@ video {
   height: 2.25rem;
 }
 
-.min-h-\[94vh\] {
-  min-height: 94vh;
+.min-h-\[78vh\] {
+  min-height: 78vh;
 }
 
 .min-h-screen {
@@ -760,6 +759,11 @@ video {
   line-height: 2rem;
 }
 
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
@@ -800,6 +804,18 @@ video {
 
 #selectedFilesHeader {
   display: none;
+}
+
+/* Sombras para el tema claro */
+
+html:not(.dark) .my-button.dz-drag-hover {
+  box-shadow: 0 0 20px 10px grey;
+}
+
+/* Sombras para el tema oscuro */
+
+html.dark .my-button.dz-drag-hover {
+  box-shadow: 0 0 20px 10px lightblue;
 }
 
 .hover\:ring:hover {
@@ -873,8 +889,8 @@ video {
     height: 4rem;
   }
 
-  .md\:min-h-\[94vh\] {
-    min-height: 94vh;
+  .md\:min-h-\[78vh\] {
+    min-height: 78vh;
   }
 
   .md\:w-1\/2 {
@@ -941,3 +957,4 @@ video {
     margin-right: 30rem;
   }
 }
+  
