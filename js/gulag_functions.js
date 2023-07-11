@@ -67,33 +67,11 @@ function update_percentage(prc) {
   progress.setAttribute('style', `width:${percentageValue}%`);
 }
 
-//Function to add an upper button when there are a lot of files in the dropzone
-function add_upper_button() {
-  // if (Dropzone.instances[0].getAddedFiles().length > 2) {
-  //     document.querySelector("#upper-button-add-later").innerHTML ='<div class="buttons"><button type="button" onclick="process_upload()" class="btn bg-gradient-warning mt-4" style="display: block; margin: auto;"> <font size="+2">Haz click aquí para comenzar a limpiar</font></button></div>'
-  // }
-  document.querySelector("#lower-button-add-later").innerHTML = '<div class="buttons"><button type="button" onclick="process_upload()" class="btn bg-gradient-warning mt-4" style="display: block; margin: auto;"> <font size="+2">Haz click aquí para comenzar a limpiar</font></button></div>'
-}
-
-// function process_info(){
-//   let percentage = document.querySelector('.percentage');
-//   let progress = document.querySelector('.progress');
-//   percentage.style.display = 'block';
-//   progress.style.display = 'block';
-
-// }
-
 //Function that is called when the user clicks the clean button
 async function process_upload() {
   //We load all the files in the Dropzone
   filearray = Dropzone.instances[0].getAddedFiles()
 
-  // if (filearray.length > 1) {
-  //     change_to_download_page_multi()
-  // } else {
-  //     change_to_download_page(filearray[0].name)
-  // }
-  // process_info()
   document.querySelector('.progreso').style.display = 'block';
   document.getElementById('removeAdsButton').style.display = 'none';
   document.getElementById('PDFDrop').style.display = 'none';
