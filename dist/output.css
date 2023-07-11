@@ -992,6 +992,10 @@ html.dark .my-button.dz-drag-hover {
     width: auto;
   }
 
+  .md\:w-2\/3 {
+    width: 66.666667%;
+  }
+
   .md\:flex-grow {
     flex-grow: 1;
   }
@@ -1018,6 +1022,11 @@ html.dark .my-button.dz-drag-hover {
   .md\:text-5xl {
     font-size: 3rem;
     line-height: 1;
+  }
+
+  .md\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 }
 
