@@ -59,12 +59,12 @@ async function downloadfile() {
 
 //Function to update the progrss bar to a given percentage (0 to 100)
 function update_percentage(prc) {
-  // let percentage = document.querySelector('.percentage');
+  let percentage = document.querySelector('.percentage');
   let percentageValue = Math.round(prc)
   let progress = document.querySelector('.progress');
 
-  // percentage.textContent = percentageValue + "%";
-  // progress.setAttribute('style', `width:${percentageValue}%`);
+  percentage.textContent = percentageValue + "%";
+  progress.setAttribute('style', `width:${percentageValue}%`);
 }
 
 //Function to add an upper button when there are a lot of files in the dropzone
@@ -75,21 +75,34 @@ function add_upper_button() {
   document.querySelector("#lower-button-add-later").innerHTML = '<div class="buttons"><button type="button" onclick="process_upload()" class="btn bg-gradient-warning mt-4" style="display: block; margin: auto;"> <font size="+2">Haz click aquí para comenzar a limpiar</font></button></div>'
 }
 
+// function process_info(){
+//   let percentage = document.querySelector('.percentage');
+//   let progress = document.querySelector('.progress');
+//   percentage.style.display = 'block';
+//   progress.style.display = 'block';
+
+// }
+
 //Function that is called when the user clicks the clean button
 async function process_upload() {
   //We load all the files in the Dropzone
   filearray = Dropzone.instances[0].getAddedFiles()
+
   // if (filearray.length > 1) {
   //     change_to_download_page_multi()
   // } else {
   //     change_to_download_page(filearray[0].name)
   // }
+  // process_info()
+  document.querySelector('.progreso').style.display = 'block';
+  document.getElementById('removeAdsButton').style.display = 'none';
+  document.getElementById('PDFDrop').style.display = 'none';
 
   //This is the array where we will store the cleaned pdfs
   window.cleaned = []
 
   //We initialize the progress bar
-  // update_percentage(1)
+  update_percentage(1)
   chunk = 100 / (filearray.length * 3)
   progress = 0
 
@@ -105,7 +118,7 @@ async function process_upload() {
       await fileLoaded;
       data = new Uint8Array(reader.result)
       progress += chunk
-      // update_percentage(progress)
+      update_percentage(progress)
 
       //We decrypt the pdf and update the progress bar
       decrypted_pdf = await window.decrypt_pdf(data)
@@ -114,7 +127,7 @@ async function process_upload() {
           return
       }
       progress += chunk
-      // update_percentage(progress)
+      update_percentage(progress)
 
       //We clean the pdf and update the progress bar
       cleaned_pdf = await window.clean_pdf(decrypted_pdf)
@@ -123,7 +136,7 @@ async function process_upload() {
           return
       }
       progress += chunk
-      // update_percentage(progress)
+      update_percentage(progress)
 
       //We add the cleaned pdf to the array
       window.cleaned.push([cleaned_pdf, filearray[file_number_w].name])
@@ -168,7 +181,6 @@ Dropzone.options.PDFDrop = {
   previewTemplate: `<div class="file-preview ">
     <span data-dz-name></span>
   </div>`,
-
   previewsContainer: "#filePreviews",
   init: function () {
     this.on('addedfile', function() {

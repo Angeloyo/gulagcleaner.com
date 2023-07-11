@@ -83,26 +83,45 @@
             <h2 class="block md:hidden text-2xl mt-4 dark:text-white">Selecciona uno o varios PDFs en el recuadro para eliminar la publicidad 
                 de tus apuntes.
             </h2>
-
+            <!-- boton seleccionar archivos -->
             <button action="/action" class=" dropzone dz-clickable my-button 
             text-2xl md:text-4xl bg-gulag-blue rounded-md mt-7 text-white px-3 py-3 
             md:px-6 md:py-6" id="PDFDrop">
             </button>
-
+            <!-- boton descarga -->
             <button class="text-2xl md:text-4xl bg-gulag-blue rounded-md mt-7 text-white px-3 py-3 
             md:px-6 md:py-6 " id="removeAdsButton" onclick="process_upload()">Descargar archivos sin publicidad
             </button>
-
-            <div class="mt-7 mb-2 text-3xl dark:text-white" id="selectedFilesHeader">
-                Archivos seleccionados:</div>
-            
-            <div class="text-2xl rounded-lg" id="filePreviews"></div>
-            
+            <!-- informacion progreso -->
+            <div class="progreso my-7">
+                <div class="flex justify-between mb-1">
+                    <span class="text-3xl font-medium text-blue-700 dark:text-white">Procesando...</span>
+                    <span class="percentage text-3xl font-medium text-blue-700 dark:text-white"></span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                    <div class="progress bg-blue-600 h-2.5 rounded-full" ></div>
+                </div>
+            </div>
+            <!-- mensaje empezar de nuevo el proceso -->
             <div class="mt-7 mb-2 text-xl dark:text-white" id="restartProcess">
                 Para empezar de nuevo el proceso, refresca la página o haz click 
                 <!-- <a class="text-gulag-blue" href="https://gulagcleaner.com">aquí</a></div> -->
                 <a class="text-gulag-blue" href="http://127.0.0.1:5500/">aquí</a>
             </div>
+                
+  
+            <!-- <div class="bar">
+                <div class="progress bg-gradient-primary">
+                </div>
+            </div>
+            <div class="percentage">
+            </div> -->
+
+            <!-- lista archivos seleccionados -->
+            <div class="mt-7 mb-2 text-3xl dark:text-white" id="selectedFilesHeader">
+                Archivos seleccionados:</div>
+            <div class="text-2xl rounded-lg" id="filePreviews"></div>
+            
         </div>
 
         <!-- iconitos y texto -->
