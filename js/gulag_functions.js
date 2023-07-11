@@ -117,7 +117,6 @@ Dropzone.options.PDFDrop = {
   maxFilesize: 500, // MB
   acceptedFiles: ".pdf",
   maxFiles: 100,
-  dictDefaultMessage: `Seleccionar archivo PDF`, // message display on drop area
   dictFallbackMessage: "Your browser does not support drag'n'drop file uploads.",
   dictInvalidFileType: "Por favor, selecciona un archivo tipo PDF",
   dictFileTooBig: "PDF demasiado grande.",
