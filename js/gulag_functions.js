@@ -89,19 +89,12 @@ async function process_upload() {
 
       //We add the cleaned pdf to the array
       window.cleaned.push([cleaned_pdf, filearray[file_number_w].name])
-
-
   }
 
-  // if (window.cleaned.length == 0) {
-  //     //Error page
-  //     change_to_error_page()
-  // } else if (window.cleaned.length == 1) {
-
-  //     change_to_progress_bar_page(filearray[0].name)
-  // } else if (window.cleaned.length > 1) {
-  //     change_to_progress_bar_page_multi()
-  // }
+  if (window.cleaned.length == 0) {
+      //Error page
+      document.getElementById('PDFDrop').style.display = 'block';
+  } 
 
   downloadfile();
 
@@ -143,13 +136,3 @@ Dropzone.options.PDFDrop = {
   accept: function(file, done) {
   }
 };
-
-  // accept: function(file, done) {
-  //     file.previewElement.children[2].remove();
-  //     file.previewElement.children[1].children[0].remove();
-  //     // file.previewElement.querySelector("img").parentElement.classList = []
-  //     // file.previewElement.querySelector("img").src = "./static/assets/img/pdf.png";
-  //     // file.previewElement.querySelector("img").width = 120;
-  //     // file.previewElement.querySelector("img").height = 120;
-  //     add_upper_button()
-  // }

@@ -16,6 +16,10 @@
     margin-right: auto;
 }
 
+#error-page{
+    display:none;
+}
+
 #restartProcess{
     display: none;
 }
