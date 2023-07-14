@@ -44,9 +44,10 @@ async function process_upload() {
   filearray = Dropzone.instances[0].getAddedFiles()
 
   document.querySelector('.progreso').style.display = 'block';
-  document.getElementById('removeAdsButton').style.display = 'none';
+  // document.getElementById('removeAdsButton').style.classList.remove('d-none');
+  // document.getElementById('removeAdsButton-phone').style.display = 'none';
   document.getElementById('PDFDrop').style.display = 'none';
-  document.getElementById('panel-derecho').classList.add('d-none');
+  // document.getElementById('panel-derecho').classList.add('d-none');
   document.getElementById('selectedFilesHeader').classList.add('d-none');
   document.getElementById('filePreviews').classList.add('d-none');
 
@@ -152,6 +153,8 @@ Dropzone.options.PDFDrop = {
 
         // document.getElementById('panel-derecho').classList.remove('hidden');
         document.getElementById('panel-derecho').classList.remove('d-none');
+        document.getElementById('removeAdsButton').classList.remove('d-none');
+        document.getElementById('removeAdsButton-phone').classList.remove('d-none');
 
         document.getElementById('PDFDrop').innerText = "Seleccionar más archivos PDF";
 
