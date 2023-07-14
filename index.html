@@ -9,6 +9,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
+    
+    <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
+    
     <title>GulagCleaner</title>
 </head>
 <body class="flex flex-col min-h-screen dark:bg-gulag-dark-body" style="font-family: 'Roboto', sans-serif;">
@@ -74,71 +77,91 @@
       
     <main>
         <!-- lugar donde está la funcionalidad -->
-        <div class="min-h-[84vh] text-center pt-14 mx-10 md:mx-24">
-            <h1 class="text-4xl md:text-5xl dark:text-white">Eliminar publicidad</h1>
+        <div id="functionality" class="min-h-[93vh] text-center  ml-10 mr-0 flex justify-center relative">
 
-            <h2 class="hidden md:block text-2xl mt-4 dark:text-white">Suelta uno o varios PDFs desde el recuadro para eliminar la publicidad 
-                de tus apuntes.
-            </h2>
+            <!-- parte izquierda o inicial -->
+            <div class="mr-10 pt-14 flex flex-col flex-grow">
+                <div class="overflow-y-auto max-h-[80vh] pt-7">
+                    <div id="eliminarpubli-text">
+                        <h1 class="text-4xl md:text-5xl dark:text-white">Eliminar publicidad</h1>
+        
+                        <h2 class="hidden md:block text-2xl mt-4 dark:text-white mb-7">Suelta uno o varios PDFs desde el recuadro para eliminar la publicidad 
+                            de tus apuntes.
+                        </h2>
+        
+                        <!-- Diferente texto en versión móvil -->
+                        <h2 class="block md:hidden text-2xl mt-4 dark:text-white mb-7">Selecciona uno o varios PDFs en el recuadro para eliminar la publicidad 
+                            de tus apuntes.
+                        </h2>
+                    </div>
+        
+                    <!-- boton seleccionar archivos -->
+                    <button action="/action" class=" dropzone dz-clickable my-button
+                    text-2xl md:text-4xl bg-gulag-blue rounded-md  text-white px-3 py-3 
+                    md:px-6 md:py-6 " id="PDFDrop">
+                    <span class="dz-default dz-message">Seleccionar archivos PDF</span>
+                    </button>
+        
+                    <!-- error msg -->
+                    <div id="error-page">
+                        <h2 class="text-6xl my-7 text-red-60 ">
+                            Error
+                        </h2>
+                        <h3 class="text-red-800 dark:text-red-400 md:w-2/3 mx-auto">
+                            Se ha producido un error al eliminar la publicidad. Envíanos el PDF a gulagcleaner@gmail.com e investigaremos 
+                            el problema. ¡Gracias! 
+                        </h3>
+                    </div>                
+        
+                    <!-- informacion progreso -->
+                    <div class="progreso my-7 md:w-2/3 mx-auto">
+                        <div class="flex justify-between mb-1">
+                            <span class="text-xl md:text-3xl font-medium text-blue-700 dark:text-white">Procesando...</span>
+                            <span class="percentage text-xl md:text-3xl font-medium text-blue-700 dark:text-white"></span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                            <div class="progress bg-blue-600 h-2.5 rounded-full" ></div>
+                        </div>
+                    </div>
 
-            <!-- Diferente texto en versión móvil -->
-            <h2 class="block md:hidden text-2xl mt-4 dark:text-white">Selecciona uno o varios PDFs en el recuadro para eliminar la publicidad 
-                de tus apuntes.
-            </h2>
-
-            <!-- boton seleccionar archivos -->
-            <button action="/action" class=" dropzone dz-clickable my-button
-            text-2xl md:text-4xl bg-gulag-blue rounded-md mt-7 text-white px-3 py-3 
-            md:px-6 md:py-6" id="PDFDrop">
-            <span class="dz-default dz-message">Seleccionar archivo PDF</span>
-            </button>
-
-            <!-- boton descarga -->
-            <button class="text-2xl md:text-4xl bg-gulag-blue rounded-md mt-7 text-white px-3 py-3 
-            md:px-6 md:py-6 " id="removeAdsButton" onclick="process_upload()">Descargar archivos sin publicidad
-            </button>
-
-            <!-- error msg -->
-            <div id="error-page">
-                <h2 class="text-6xl my-7 text-red-600">
-                    Error
-                </h2>
-                <h3 class="text-red-800 dark:text-red-400 md:w-2/3 mx-auto">
-                    Se ha producido un error al eliminar la publicidad. Envíanos el PDF a gulagcleaner@gmail.com e investigaremos 
-                    el problema. ¡Gracias! 
-                </h3>
-            </div>                
-
-            <!-- informacion progreso -->
-            <div class="progreso my-7 md:w-2/3 mx-auto">
-                <div class="flex justify-between mb-1">
-                    <span class="text-xl md:text-3xl font-medium text-blue-700 dark:text-white">Procesando...</span>
-                    <span class="percentage text-xl md:text-3xl font-medium text-blue-700 dark:text-white"></span>
+                    <!-- boton descargar -->
+                    <button class="d-none text-2xl md:text-4xl bg-gulag-blue rounded-md my-11 mx-4 text-white px-3 py-3
+                    md:p-5 "
+                    id="downloadButton" onclick="downloadfile()">Descargar archivos sin publicidad
+                    </button>
+        
+                    <!-- mensaje empezar de nuevo el proceso -->
+                    <div class="my-5 text-lg dark:text-white" id="restartProcess">
+                        Tu descarga ha debido de realizarse automáticamente. 
+                        Para empezar de nuevo el proceso, refresca la página o haz click 
+                        <!-- <a class="text-gulag-blue" href="https://gulagcleaner.com">aquí</a></div> -->
+                        <!-- <a class="text-gulag-blue" href="http://127.0.0.1:5500/">aquí</a> -->
+                        <a class="text-gulag-blue" href="https://angeloyo.github.io/gulagcleaner.com/">aquí</a>
+                    </div>
+        
+                    <!-- lista archivos seleccionados -->
+                    <div class="d-none mt-7 mb-2 text-3xl dark:text-white" id="selectedFilesHeader">
+                        Archivos seleccionados:</div>
+                    <div class="text-sm rounded-lg flex flex-wrap justify-center" id="filePreviews"></div>
                 </div>
-                <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-                    <div class="progress bg-blue-600 h-2.5 rounded-full" ></div>
-                </div>
+                
             </div>
 
-            <!-- mensaje empezar de nuevo el proceso -->
-            <div class="mt-7 mb-2 text-xl dark:text-white" id="restartProcess">
-                Para empezar de nuevo el proceso, refresca la página o haz click 
-                <!-- <a class="text-gulag-blue" href="https://gulagcleaner.com">aquí</a></div> -->
-                <!-- <a class="text-gulag-blue" href="http://127.0.0.1:5500/">aquí</a> -->
-                <a class="text-gulag-blue" href="https://angeloyo.github.io/gulagcleaner.com/">aquí</a>
+            <!-- parte derecha, procesado -->
+            <div id="panel-derecho" class="d-none dark:bg-gulag-dark bg-gulag-blue-light w-[16rem] flex flex-col justify-end flex-shrink-0
+            h-screen-minus-navbar ">
+                <!-- boton procesar -->
+                <button class="text-2xl md:text-2xl bg-gulag-blue rounded-md mb-11 mx-4 text-white px-3 py-3 
+                " id="removeAdsButton" onclick="process_upload()">Eliminar publicidad de los archivos
+                </button>
             </div>
-
-            <!-- lista archivos seleccionados -->
-            <div class="mt-7 mb-2 text-3xl dark:text-white" id="selectedFilesHeader">
-                Archivos seleccionados:</div>
-            <div class="text-2xl rounded-lg" id="filePreviews"></div>
             
         </div>
 
         <!-- iconitos y texto -->
-        <div class="md:flex-grow md:flex justify-center mt-24 mx-7 xl:mx-40">
+        <div id="iconos-y-texto" class="md:flex-grow md:flex flex-wrap justify-center mt-12 mx-7 xl:mx-40">
 
-              <div class="mb-7 md:w-1/3 text-center flex flex-col items-center justify-center">
+              <div class="mb-7 md:w-1/3 text-center flex flex-col items-center">
                 <div class="w-20 h-20 bg-gulag-blue rounded-full flex items-center justify-center">
                     <svg class="w-12 h-12 fill-white" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M130 480c40.6 0 80.4-11 115.2-31.9L352 384l-224 0 0 96h2zM352 128L245.2 63.9C210.4 43 170.6 32 130 32h-2v96l224 0zM96 128l0-96H80C53.5 32 32 53.5 32 80v48h8c-22.1 0-40 17.9-40 40v16V328v16c0 22.1 17.9 40 40 40H32v48c0 26.5 21.5 48 48 48H96l0-96h8c26.2 0 49.4-12.6 64-32H456c69.3 0 135-22.7 179.2-81.6c6.4-8.5 6.4-20.3 0-28.8C591 182.7 525.3 160 456 160H168c-14.6-19.4-37.8-32-64-32l-8 0zM512 243.6v24.9c0 19.6-15.9 35.6-35.6 35.6c-2.5 0-4.4-2-4.4-4.4V212.4c0-2.5 2-4.4 4.4-4.4c19.6 0 35.6 15.9 35.6 35.6z"/></svg>
                 </div>
@@ -146,7 +169,7 @@
                 <h3 class="mt-3 mx-3 xl:mx-9 text-xl dark:text-white">Los PDF no se suben a nuestros servidores, por lo que no gastas datos cuando usas nuestra web.</h3>
             </div>
 
-              <div class="mb-7 md:w-1/3 text-center flex flex-col items-center justify-center">
+              <div class="mb-7 md:w-1/3 text-center flex flex-col items-center">
                 <div class="w-20 h-20 bg-gulag-blue rounded-full flex items-center justify-center">
                     <svg class="w-12 h-12 fill-white" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M323.4 85.2l-96.8 78.4c-16.1 13-19.2 36.4-7 53.1c12.9 17.8 38 21.3 55.3 7.8l99.3-77.2c7-5.4 17-4.2 22.5 2.8s4.2 17-2.8 22.5l-20.9 16.2L512 316.8V128h-.7l-3.9-2.5L434.8 79c-15.3-9.8-33.2-15-51.4-15c-21.8 0-43 7.5-60 21.2zm22.8 124.4l-51.7 40.2C263 274.4 217.3 268 193.7 235.6c-22.2-30.5-16.6-73.1 12.7-96.8l83.2-67.3c-11.6-4.9-24.1-7.4-36.8-7.4C234 64 215.7 69.6 200 80l-72 48V352h28.2l91.4 83.4c19.6 17.9 49.9 16.5 67.8-3.1c5.5-6.1 9.2-13.2 11.1-20.6l17 15.6c19.5 17.9 49.9 16.6 67.8-2.9c4.5-4.9 7.8-10.6 9.9-16.5c19.4 13 45.8 10.3 62.1-7.5c17.9-19.5 16.6-49.9-2.9-67.8l-134.2-123zM16 128c-8.8 0-16 7.2-16 16V352c0 17.7 14.3 32 32 32H64c17.7 0 32-14.3 32-32V128H16zM48 320a16 16 0 1 1 0 32 16 16 0 1 1 0-32zM544 128V352c0 17.7 14.3 32 32 32h32c17.7 0 32-14.3 32-32V144c0-8.8-7.2-16-16-16H544zm32 208a16 16 0 1 1 32 0 16 16 0 1 1 -32 0z"/></svg>
                 </div>
@@ -154,7 +177,7 @@
                 <h3 class="mt-3 mx-9 text-xl dark:text-white">Puedes contribuir a la versión en Python de Gulag Cleaner en nuestro Github.</h3>
             </div>
 
-            <div class="mb-7 md:w-1/3 text-center flex flex-col items-center justify-center">
+            <div class="mb-7 md:w-1/3 text-center flex flex-col items-center">
                 <div class="w-20 h-20 bg-gulag-blue rounded-full flex items-center justify-center">
                     <svg class="w-12 h-12 fill-white" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M176 0c-17.7 0-32 14.3-32 32s14.3 32 32 32h16V98.4C92.3 113.8 16 200 16 304c0 114.9 93.1 208 208 208s208-93.1 208-208c0-41.8-12.3-80.7-33.5-113.2l24.1-24.1c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L355.7 143c-28.1-23-62.2-38.8-99.7-44.6V64h16c17.7 0 32-14.3 32-32s-14.3-32-32-32H224 176zm72 192V320c0 13.3-10.7 24-24 24s-24-10.7-24-24V192c0-13.3 10.7-24 24-24s24 10.7 24 24z"/></svg>
                 </div>
@@ -164,7 +187,7 @@
         </div>
 
         <!-- foto lenin y nuestro objetivo -->
-        <div class="md:flex justify-center items-center mt-32 mx-7 xl:mx-40" >
+        <div id="lenin-y-objetivo" class=" md:flex justify-center items-center mt-32 mx-7 xl:mx-40 " >
             <div class="md:w-1/2 md:mr-16">
                 <img class="rounded-xl" src="./img/lenin.png" alt="GulagCleaner Image">
             </div>
@@ -175,7 +198,7 @@
         </div>
 
         <!-- texto ayudanos y rrss -->
-        <div class="text-center mt-32 mx-7 md:mx-14 lg:mx-[24] xl:mx-[30rem]">
+        <div id="ayudanos-y-rrss" class="text-center mt-32 mx-7 md:mx-14 lg:mx-[24] xl:mx-[30rem]">
             <h2 class="text-4xl dark:text-white font-bold">Ayudanos</h2>
             <h3 class="text-xl mt-5 dark:text-white">Necesitamos tu ayuda para difundir la web entre la comunidad de estudiantes. Ayudanos compartiendola con tus compañeros de clase o poniendo un mensaje en tus redes sociales. Nos puedes encontrar en Twitter e Instagram como @GulagCleaner</h3>
             <div class="flex justify-center mt-7">
@@ -195,7 +218,7 @@
 
     </main>
 
-    <footer class="bg-gulag-blue-light mt-32 dark:bg-gulag-dark">
+    <footer id="footer" class="bg-gulag-blue-light mt-32 dark:bg-gulag-dark">
         <div class="flex justify-center my-7 dark:text-white">
 
             <div class="mx-11">
@@ -219,6 +242,8 @@
     <script src="./js/gulag_functions.js" type="text/javascript"></script>
     <script src="./js/wasm_functions.js" type="module"></script>
     <script src="./js/frontend.js"></script>
+
+
 
 </body>
 </html>

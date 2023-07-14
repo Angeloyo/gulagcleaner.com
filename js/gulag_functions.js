@@ -46,6 +46,9 @@ async function process_upload() {
   document.querySelector('.progreso').style.display = 'block';
   document.getElementById('removeAdsButton').style.display = 'none';
   document.getElementById('PDFDrop').style.display = 'none';
+  document.getElementById('panel-derecho').classList.add('d-none');
+  document.getElementById('selectedFilesHeader').classList.add('d-none');
+  document.getElementById('filePreviews').classList.add('d-none');
 
   //This is the array where we will store the cleaned pdfs
   window.cleaned = []
@@ -97,8 +100,11 @@ async function process_upload() {
   } 
 
   downloadfile();
-
+  
   document.getElementById('restartProcess').style.display = 'block';
+
+  document.getElementById('downloadButton').classList.remove('d-none');
+
 }
 
 //Dropzone configuration
@@ -119,20 +125,82 @@ Dropzone.options.PDFDrop = {
   dictRemoveFile: "Remove file",
   dictCancelUploadConfirmation: "You really want to delete this file?",
   dictUploadCanceled: "Upload canceled",
+  
   previewTemplate: `<div class="file-preview ">
     <span data-dz-name></span>
   </div>`,
   previewsContainer: "#filePreviews",
-  init: function () {
-    this.on('addedfile', function() {
-      // Agrega la visibilidad al encabezado cuando se agrega el primer archivo
-      if (this.files.length === 1) {
-        document.getElementById('selectedFilesHeader').style.display = 'block';
-        document.getElementById('removeAdsButton').style.display = 'block';
-        // document.getElementById('restartProcess').style.display = 'block';
-      }
+
+  init: function() {
+    this.on('addedfile', (file) => {
+
+      // if (this.files.length === 1) {
+        // document.getElementById('selectedFilesHeader').style.display = 'block';
+        // document.getElementById('removeAdsButton').style.display = 'block';
+        document.getElementById('selectedFilesHeader').classList.remove('d-none');
+
+        document.getElementById('iconos-y-texto').classList.add('md:hidden');
+        document.getElementById('lenin-y-objetivo').classList.add('md:hidden');
+        document.getElementById('ayudanos-y-rrss').classList.add('md:hidden');
+        document.getElementById('footer').classList.add('d-none');
+
+        // document.getElementById('functionality').style.height = "max-content";
+        document.getElementById('functionality').classList.remove('min-h-[93vh]');
+
+
+        document.getElementById('eliminarpubli-text').style.display = 'none';
+
+        // document.getElementById('panel-derecho').classList.remove('hidden');
+        document.getElementById('panel-derecho').classList.remove('d-none');
+
+        document.getElementById('PDFDrop').innerText = "Seleccionar más archivos PDF";
+
+      // }
+      
+      let reader = new FileReader();
+
+      reader.readAsArrayBuffer(file);
+
+      reader.onload = function(event) {
+        let typedArray = new Uint8Array(this.result);
+
+        pdfjsLib.getDocument({data: typedArray}).promise.then(function(pdf) {
+          return pdf.getPage(1); 
+        }).then(function(page) {
+          let desiredMaxDim = 200; 
+          let scale = Math.min(desiredMaxDim / page.getViewport({scale: 1.0}).width, desiredMaxDim / page.getViewport({scale: 1.0}).height);
+          let scaledViewport = page.getViewport({scale: scale});
+          let canvas = document.createElement('canvas');
+          let context = canvas.getContext('2d');
+          canvas.height = scaledViewport.height;
+          canvas.width = scaledViewport.width;
+
+          let renderContext = {
+            canvasContext: context,
+            viewport: scaledViewport
+          };
+
+          let renderTask = page.render(renderContext);
+
+          renderTask.promise.then(function () {
+            let previewElement = file.previewElement;
+            
+            // Crear un div para centrar el canvas
+            let canvasContainer = document.createElement('div');
+            canvasContainer.style.display = 'flex';
+            canvasContainer.style.justifyContent = 'center';
+            canvasContainer.style.alignItems = 'center';
+            canvasContainer.style.margin = 'auto';
+            canvasContainer.appendChild(canvas);
+
+            previewElement.appendChild(canvasContainer);
+          });
+        });
+      };
     });
   },
+  
   accept: function(file, done) {
   }
+  
 };
