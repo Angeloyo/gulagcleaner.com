@@ -141,8 +141,11 @@ Dropzone.options.PDFDrop = {
         // document.getElementById('removeAdsButton').style.display = 'block';
         document.getElementById('selectedFilesHeader').classList.remove('d-none');
 
+        document.getElementById('iconos-y-texto').classList.add('hidden');
         document.getElementById('iconos-y-texto').classList.add('md:hidden');
+        document.getElementById('lenin-y-objetivo').classList.add('hidden');
         document.getElementById('lenin-y-objetivo').classList.add('md:hidden');
+        document.getElementById('ayudanos-y-rrss').classList.add('hidden');
         document.getElementById('ayudanos-y-rrss').classList.add('md:hidden');
         document.getElementById('footer').classList.add('d-none');
 

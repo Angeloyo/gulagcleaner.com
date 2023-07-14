@@ -81,7 +81,7 @@
 
             <!-- parte izquierda o inicial -->
             <div class="mr-10 pt-14 md:flex md:flex-col md:flex-grow">
-                <div class="md:overflow-y-auto md:max-h-[80vh] pt-7">
+                <div class="md:overflow-y-auto md:max-h-[80vh] md:pt-7">
                     <div id="eliminarpubli-text">
                         <h1 class="text-4xl md:text-5xl dark:text-white">Eliminar publicidad</h1>
         
@@ -103,7 +103,7 @@
                     </button>
                     
                     <!-- boton procesar para moviles -->
-                    <button class="d-none text-2xl text-2xl bg-gulag-blue rounded-md my-11 text-white 
+                    <button class="d-none text-2xl text-2xl bg-gulag-blue rounded-md my-7 text-white 
                     px-3 py-3 md:hidden"
                     id="removeAdsButton-phone" onclick="process_upload()">Eliminar publicidad de los archivos
                     </button>
@@ -146,7 +146,7 @@
                     </div>
         
                     <!-- lista archivos seleccionados -->
-                    <div class="d-none mt-7 mb-2 text-3xl dark:text-white" id="selectedFilesHeader">
+                    <div class="d-none mb-5 md:mt-7 md.mb-2 text-3xl dark:text-white" id="selectedFilesHeader">
                         Archivos seleccionados:</div>
                     <div class="text-sm rounded-lg flex flex-wrap justify-center" id="filePreviews"></div>
                 </div>
@@ -154,11 +154,11 @@
             </div>
 
             <!-- parte derecha, procesado -->
-            <div id="panel-derecho" class="d-none md:dark:bg-gulag-dark md:bg-gulag-blue-light md:w-[16rem] flex md:flex-col 
-            md:justify-end md:flex-shrink-0 md:h-screen-minus-navbar">
+            <div id="panel-derecho" class="d-none lg:dark:bg-gulag-dark lg:bg-gulag-blue-light lg:w-[16rem] flex lg:flex-col 
+            lg:justify-end lg:flex-shrink-0 md:h-screen-minus-navbar">
                 <!-- boton procesar -->
-                <button class="md:text-2xl md:text-2xl md:bg-gulag-blue md:rounded-md md:mb-11 md:mx-4 md:text-white 
-                md:px-3 md:py-3 hidden md:flex"
+                <button class="lg:text-2xl lg:text-2xl lg:bg-gulag-blue lg:rounded-md lg:mb-11 lg:mx-4 lg:text-white 
+                lg:px-3 lg:py-3 hidden lg:flex"
                 id="removeAdsButton" onclick="process_upload()">Eliminar publicidad de los archivos
                 </button>
             </div>
