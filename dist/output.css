@@ -581,6 +581,11 @@ video {
   margin-bottom: 0px;
 }
 
+.my-10 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
 .mb-1 {
   margin-bottom: 0.25rem;
 }
@@ -1074,6 +1079,11 @@ html.dark .my-button.dz-drag-hover {
     margin-right: 1rem;
   }
 
+  .md\:my-11 {
+    margin-top: 2.75rem;
+    margin-bottom: 2.75rem;
+  }
+
   .md\:mr-16 {
     margin-right: 4rem;
   }
@@ -1084,6 +1094,10 @@ html.dark .my-button.dz-drag-hover {
 
   .md\:mt-7 {
     margin-top: 1.75rem;
+  }
+
+  .md\:mb-7 {
+    margin-bottom: 1.75rem;
   }
 
   .md\:block {
@@ -1258,6 +1272,10 @@ html.dark .my-button.dz-drag-hover {
 
   .lg\:flex {
     display: flex;
+  }
+
+  .lg\:hidden {
+    display: none;
   }
 
   .lg\:w-\[16rem\] {
