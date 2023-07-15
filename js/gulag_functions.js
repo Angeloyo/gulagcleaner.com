@@ -48,6 +48,7 @@ async function process_upload() {
   document.getElementById('panel-derecho').classList.add('d-none');
   document.getElementById('selectedFilesHeader').classList.add('d-none');
   document.getElementById('filePreviews').classList.add('d-none');
+  document.getElementById('removeAdsButton-phone').classList.add('d-none');
 
   //This is the array where we will store the cleaned pdfs
   window.cleaned = []
