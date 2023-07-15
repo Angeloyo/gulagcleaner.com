@@ -9,8 +9,6 @@ const switchButton2 = document.getElementById("switchButton2");
 const blackBanner = document.getElementById("banner-black");
 const whiteBanner = document.getElementById("banner-white");
 
-// document.getElementById('panel-derecho').classList.add('hidden');
-
 // Theme vars
 const userTheme = localStorage.getItem("theme");
 const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;

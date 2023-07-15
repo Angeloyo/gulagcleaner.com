@@ -536,6 +536,11 @@ video {
   margin-right: 0.75rem;
 }
 
+.mx-4 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
 .mx-7 {
   margin-left: 1.75rem;
   margin-right: 1.75rem;
@@ -551,16 +556,6 @@ video {
   margin-right: auto;
 }
 
-.my-7 {
-  margin-top: 1.75rem;
-  margin-bottom: 1.75rem;
-}
-
-.mx-4 {
-  margin-left: 1rem;
-  margin-right: 1rem;
-}
-
 .my-11 {
   margin-top: 2.75rem;
   margin-bottom: 2.75rem;
@@ -571,19 +566,9 @@ video {
   margin-bottom: 1.25rem;
 }
 
-.my-4 {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-
-.my-0 {
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
-
-.my-10 {
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
+.my-7 {
+  margin-top: 1.75rem;
+  margin-bottom: 1.75rem;
 }
 
 .mb-1 {
@@ -658,10 +643,6 @@ video {
   margin-top: 1.75rem;
 }
 
-.mb-11 {
-  margin-bottom: 2.75rem;
-}
-
 .block {
   display: block;
 }
@@ -702,18 +683,6 @@ video {
   height: 2.25rem;
 }
 
-.h-screen-minus-navbar {
-  height: calc(100vh - 64px);
-}
-
-.max-h-\[84vh\] {
-  max-height: 84vh;
-}
-
-.max-h-\[80vh\] {
-  max-height: 80vh;
-}
-
 .min-h-\[93vh\] {
   min-height: 93vh;
 }
@@ -746,20 +715,8 @@ video {
   width: 2.25rem;
 }
 
-.w-\[16rem\] {
-  width: 16rem;
-}
-
 .w-full {
   width: 100%;
-}
-
-.flex-shrink-0 {
-  flex-shrink: 0;
-}
-
-.flex-grow {
-  flex-grow: 1;
 }
 
 .flex-col {
@@ -774,20 +731,12 @@ video {
   align-items: center;
 }
 
-.justify-end {
-  justify-content: flex-end;
-}
-
 .justify-center {
   justify-content: center;
 }
 
 .justify-between {
   justify-content: space-between;
-}
-
-.overflow-y-auto {
-  overflow-y: auto;
 }
 
 .rounded-full {
@@ -831,11 +780,6 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-gulag-grey {
-  --tw-bg-opacity: 1;
-  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
-}
-
 .fill-black {
   fill: #000;
 }
@@ -865,10 +809,6 @@ video {
 
 .pt-14 {
   padding-top: 3.5rem;
-}
-
-.pt-7 {
-  padding-top: 1.75rem;
 }
 
 .text-center {
@@ -952,34 +892,7 @@ video {
   display: none;
 }
 
-/* #selectedFilesHeader {
-    display: none;
-} */
-
-/* #removeAdsButton {
-    display: none;
-    margin-left: auto;
-    margin-right: auto;
-} */
-
-#error-page{
-  display:none;
-}
-
-#restartProcess{
-  display: none;
-}
-
-/* 
-#panel-derecho{
-    display: none;
-} */
-
 .d-none {
-  display: none;
-}
-
-.progreso{
   display: none;
 }
 
@@ -1055,10 +968,6 @@ html.dark .my-button.dz-drag-hover {
 }
 
 @media (min-width: 768px) {
-  .md\:visible {
-    visibility: visible;
-  }
-
   .md\:mx-14 {
     margin-left: 3.5rem;
     margin-right: 3.5rem;
@@ -1069,35 +978,26 @@ html.dark .my-button.dz-drag-hover {
     margin-right: 1.25rem;
   }
 
+  .md\:my-11 {
+    margin-top: 2.75rem;
+    margin-bottom: 2.75rem;
+  }
+
   .md\:my-3 {
     margin-top: 0.75rem;
     margin-bottom: 0.75rem;
   }
 
-  .md\:mx-4 {
-    margin-left: 1rem;
-    margin-right: 1rem;
-  }
-
-  .md\:my-11 {
-    margin-top: 2.75rem;
-    margin-bottom: 2.75rem;
+  .md\:mb-7 {
+    margin-bottom: 1.75rem;
   }
 
   .md\:mr-16 {
     margin-right: 4rem;
   }
 
-  .md\:mb-11 {
-    margin-bottom: 2.75rem;
-  }
-
   .md\:mt-7 {
     margin-top: 1.75rem;
-  }
-
-  .md\:mb-7 {
-    margin-bottom: 1.75rem;
   }
 
   .md\:block {
@@ -1144,14 +1044,6 @@ html.dark .my-button.dz-drag-hover {
     width: auto;
   }
 
-  .md\:w-\[16rem\] {
-    width: 16rem;
-  }
-
-  .md\:flex-shrink-0 {
-    flex-shrink: 0;
-  }
-
   .md\:flex-grow {
     flex-grow: 1;
   }
@@ -1164,26 +1056,8 @@ html.dark .my-button.dz-drag-hover {
     flex-direction: column;
   }
 
-  .md\:justify-end {
-    justify-content: flex-end;
-  }
-
   .md\:overflow-y-auto {
     overflow-y: auto;
-  }
-
-  .md\:rounded-md {
-    border-radius: 0.375rem;
-  }
-
-  .md\:bg-gulag-blue-light {
-    --tw-bg-opacity: 1;
-    background-color: rgb(226 237 255 / var(--tw-bg-opacity));
-  }
-
-  .md\:bg-gulag-blue {
-    --tw-bg-opacity: 1;
-    background-color: rgb(2 79 255 / var(--tw-bg-opacity));
   }
 
   .md\:p-5 {
@@ -1200,33 +1074,8 @@ html.dark .my-button.dz-drag-hover {
     padding-bottom: 1.5rem;
   }
 
-  .md\:px-4 {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
-  .md\:py-4 {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-  }
-
-  .md\:px-3 {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
-  }
-
-  .md\:py-3 {
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
-  }
-
   .md\:pt-7 {
     padding-top: 1.75rem;
-  }
-
-  .md\:text-2xl {
-    font-size: 1.5rem;
-    line-height: 2rem;
   }
 
   .md\:text-3xl {
@@ -1243,27 +1092,17 @@ html.dark .my-button.dz-drag-hover {
     font-size: 3rem;
     line-height: 1;
   }
-
-  .md\:text-white {
-    --tw-text-opacity: 1;
-    color: rgb(255 255 255 / var(--tw-text-opacity));
-  }
-
-  :is(.dark .md\:dark\:bg-gulag-dark) {
-    --tw-bg-opacity: 1;
-    background-color: rgb(23 23 23 / var(--tw-bg-opacity));
-  }
 }
 
 @media (min-width: 1024px) {
-  .lg\:mx-\[24\] {
-    margin-left: 24;
-    margin-right: 24;
-  }
-
   .lg\:mx-4 {
     margin-left: 1rem;
     margin-right: 1rem;
+  }
+
+  .lg\:mx-\[24\] {
+    margin-left: 24;
+    margin-right: 24;
   }
 
   .lg\:mb-11 {

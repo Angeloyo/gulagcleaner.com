@@ -6,36 +6,9 @@
     @apply hidden;
 }
 
-/* #selectedFilesHeader {
-    display: none;
-} */
-
-/* #removeAdsButton {
-    display: none;
-    margin-left: auto;
-    margin-right: auto;
-} */
-
-#error-page{
-    display:none;
-}
-
-#restartProcess{
-    display: none;
-}
-
-/* 
-#panel-derecho{
-    display: none;
-} */
-
 .d-none {
     display: none;
 }  
-
-.progreso{
-    display: none;
-}
 
 /* Sombras para el tema claro */
 html:not(.dark) .my-button.dz-drag-hover {

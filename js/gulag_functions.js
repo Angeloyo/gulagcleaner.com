@@ -43,14 +43,11 @@ async function process_upload() {
   //We load all the files in the Dropzone
   filearray = Dropzone.instances[0].getAddedFiles()
 
-  document.querySelector('.progreso').style.display = 'block';
-  // document.getElementById('removeAdsButton').style.classList.remove('d-none');
-  // document.getElementById('removeAdsButton-phone').style.display = 'none';
+  document.querySelector('.progreso').classList.remove('d-none');
   document.getElementById('PDFDrop').style.display = 'none';
-  // document.getElementById('panel-derecho').classList.add('d-none');
+  document.getElementById('panel-derecho').classList.add('d-none');
   document.getElementById('selectedFilesHeader').classList.add('d-none');
   document.getElementById('filePreviews').classList.add('d-none');
-  document.getElementById('removeAdsButton-phone').classList.add('d-none');
 
   //This is the array where we will store the cleaned pdfs
   window.cleaned = []
@@ -98,12 +95,12 @@ async function process_upload() {
 
   if (window.cleaned.length == 0) {
       //Error page
-      document.getElementById('PDFDrop').style.display = 'block';
+      document.getElementById('error-page').classList.remove('d-none');
   } 
 
   downloadfile();
   
-  document.getElementById('restartProcess').style.display = 'block';
+  document.getElementById('restartProcess').classList.remove('d-none');
 
   document.getElementById('downloadButton').classList.remove('d-none');
 
@@ -136,34 +133,20 @@ Dropzone.options.PDFDrop = {
   init: function() {
     this.on('addedfile', (file) => {
 
-      // if (this.files.length === 1) {
-        // document.getElementById('selectedFilesHeader').style.display = 'block';
-        // document.getElementById('removeAdsButton').style.display = 'block';
-        document.getElementById('selectedFilesHeader').classList.remove('d-none');
+      document.getElementById('selectedFilesHeader').classList.remove('d-none');
+      document.getElementById('iconos-y-texto').classList.add('hidden');
+      document.getElementById('iconos-y-texto').classList.add('md:hidden');
+      document.getElementById('lenin-y-objetivo').classList.add('hidden');
+      document.getElementById('lenin-y-objetivo').classList.add('md:hidden');
+      document.getElementById('ayudanos-y-rrss').classList.add('hidden');
+      document.getElementById('ayudanos-y-rrss').classList.add('md:hidden');
+      document.getElementById('footer').classList.add('d-none');
+      document.getElementById('eliminarpubli-text').style.display = 'none';
+      document.getElementById('panel-derecho').classList.remove('d-none');
+      document.getElementById('removeAdsButton').classList.remove('d-none');
+      document.getElementById('removeAdsButton-phone').classList.remove('d-none');
+      document.getElementById('PDFDrop').innerText = "Seleccionar más archivos PDF";
 
-        document.getElementById('iconos-y-texto').classList.add('hidden');
-        document.getElementById('iconos-y-texto').classList.add('md:hidden');
-        document.getElementById('lenin-y-objetivo').classList.add('hidden');
-        document.getElementById('lenin-y-objetivo').classList.add('md:hidden');
-        document.getElementById('ayudanos-y-rrss').classList.add('hidden');
-        document.getElementById('ayudanos-y-rrss').classList.add('md:hidden');
-        document.getElementById('footer').classList.add('d-none');
-
-        // document.getElementById('functionality').style.height = "max-content";
-        document.getElementById('functionality').classList.remove('min-h-[93vh]');
-
-
-        document.getElementById('eliminarpubli-text').style.display = 'none';
-
-        // document.getElementById('panel-derecho').classList.remove('hidden');
-        document.getElementById('panel-derecho').classList.remove('d-none');
-        document.getElementById('removeAdsButton').classList.remove('d-none');
-        document.getElementById('removeAdsButton-phone').classList.remove('d-none');
-
-        document.getElementById('PDFDrop').innerText = "Seleccionar más archivos PDF";
-
-      // }
-      
       let reader = new FileReader();
 
       reader.readAsArrayBuffer(file);
