@@ -600,6 +600,11 @@ video {
   margin-bottom: 0.75rem;
 }
 
+.mx-5 {
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
+}
+
 .mb-1 {
   margin-bottom: 0.25rem;
 }
@@ -1105,6 +1110,11 @@ html.dark .my-button.dz-drag-hover {
     margin-bottom: 0.75rem;
   }
 
+  .md\:mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .md\:mb-7 {
     margin-bottom: 1.75rem;
   }
@@ -1229,6 +1239,16 @@ html.dark .my-button.dz-drag-hover {
   .lg\:my-11 {
     margin-top: 2.75rem;
     margin-bottom: 2.75rem;
+  }
+
+  .lg\:mx-11 {
+    margin-left: 2.75rem;
+    margin-right: 2.75rem;
+  }
+
+  .lg\:mx-auto {
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .lg\:mb-11 {
