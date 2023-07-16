@@ -102,8 +102,8 @@ async function process_upload() {
   downloadfile();
   
   document.getElementById('restartProcess').classList.remove('d-none');
-
   document.getElementById('downloadButton').classList.remove('d-none');
+  document.getElementById('help-sharing').classList.remove('d-none');
 
 }
 
