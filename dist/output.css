@@ -522,8 +522,16 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.fixed {
+  position: fixed;
+}
+
 .relative {
   position: relative;
+}
+
+.bottom-0 {
+  bottom: 0px;
 }
 
 .mx-11 {
@@ -643,6 +651,18 @@ video {
   margin-top: 1.75rem;
 }
 
+.mb-48 {
+  margin-bottom: 12rem;
+}
+
+.mb-56 {
+  margin-bottom: 14rem;
+}
+
+.mb-64 {
+  margin-bottom: 16rem;
+}
+
 .block {
   display: block;
 }
@@ -689,6 +709,46 @@ video {
 
 .min-h-screen {
   min-height: 100vh;
+}
+
+.min-h-\[70vh\] {
+  min-height: 70vh;
+}
+
+.min-h-\[60vh\] {
+  min-height: 60vh;
+}
+
+.min-h-\[65vh\] {
+  min-height: 65vh;
+}
+
+.min-h-\[66vh\] {
+  min-height: 66vh;
+}
+
+.min-h-\[67vh\] {
+  min-height: 67vh;
+}
+
+.min-h-\[68vh\] {
+  min-height: 68vh;
+}
+
+.min-h-\[73vh\] {
+  min-height: 73vh;
+}
+
+.min-h-\[74vh\] {
+  min-height: 74vh;
+}
+
+.min-h-\[75vh\] {
+  min-height: 75vh;
+}
+
+.min-h-\[76vh\] {
+  min-height: 76vh;
 }
 
 .w-11 {
