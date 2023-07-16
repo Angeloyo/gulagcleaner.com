@@ -116,30 +116,30 @@
                             Se ha producido un error al eliminar la publicidad. Envíanos el PDF a gulagcleaner@gmail.com e investigaremos 
                             el problema. ¡Gracias! 
                         </h3>
-                    </div>                
+                    </div>
+                    
+                    <!-- informacion progreso -->
+                    <div class="d-none progreso my-7 md:w-2/3 mx-auto">
+                        <div class="flex justify-between mb-1">
+                            <span class="text-xl md:text-3xl font-medium text-blue-700 ">Procesando...</span>
+                            <span class="percentage text-xl md:text-3xl font-medium text-blue-700 "></span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                            <div class="progress bg-blue-600 h-2.5 rounded-full" ></div>
+                        </div>
+                    </div>
                     
                     <!-- ultima pantalla -->
                     <div class="flex flex-col lg:flex-row text-black dark:text-white items-center">
-                        <div class="lg:w-1/2">
-                            <!-- informacion progreso -->
-                            <div class="d-none progreso my-7 md:w-2/3 mx-auto">
-                                <div class="flex justify-between mb-1">
-                                    <span class="text-xl md:text-3xl font-medium text-blue-700 ">Procesando...</span>
-                                    <span class="percentage text-xl md:text-3xl font-medium text-blue-700 "></span>
-                                </div>
-                                <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-                                    <div class="progress bg-blue-600 h-2.5 rounded-full" ></div>
-                                </div>
-                            </div>
-
+                        <div class="lg:w-1/2 d-none" id="descarga-y-mensaje">
                             <!-- boton descargar -->
-                            <button class="d-none text-2xl md:text-4xl bg-gulag-blue rounded-md lg:my-11 my-5 mx-4 text-white px-3 py-3
-                            md:p-5 hover:ring"
-                            id="downloadButton" onclick="downloadfile()">Descargar archivos sin publicidad
+                            <button class="text-2xl md:text-4xl bg-gulag-blue rounded-md lg:my-11 my-5 mx-4 text-white px-3 py-3
+                            md:p-5 hover:ring" onclick="downloadfile()">
+                            Descargar archivos sin publicidad
                             </button>
                 
                             <!-- mensaje empezar de nuevo el proceso -->
-                            <div class="d-none m-7 text-lg " id="restartProcess">
+                            <div class="m-7 text-lg ">
                                 Tu descarga ha debido de realizarse automáticamente. 
                                 Para empezar de nuevo el proceso, refresca la página o haz click 
                                 <a class="text-gulag-blue" href="https://gulagcleaner.com">aquí</a>
