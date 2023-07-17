@@ -1,3 +1,3 @@
-# gulagcleaner.com
+# New gulagcleaner.com website
 
-new gulagcleaner.com website, still in progress. Using html,js and tailwind css
+Made with hmtl, js and tailwind css
