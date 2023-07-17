@@ -153,11 +153,15 @@ Dropzone.options.PDFDrop = {
       reader.readAsArrayBuffer(file);
 
       reader.onload = function(event) {
+        
         let typedArray = new Uint8Array(this.result);
 
         pdfjsLib.getDocument({data: typedArray}).promise.then(function(pdf) {
+          s
           return pdf.getPage(1); 
+
         }).then(function(page) {
+
           let desiredMaxDim = 200; 
           let scale = Math.min(desiredMaxDim / page.getViewport({scale: 1.0}).width, desiredMaxDim / page.getViewport({scale: 1.0}).height);
           let scaledViewport = page.getViewport({scale: scale});
@@ -174,17 +178,16 @@ Dropzone.options.PDFDrop = {
           let renderTask = page.render(renderContext);
 
           renderTask.promise.then(function () {
+
             let previewElement = file.previewElement;
-            
-            // Crear un div para centrar el canvas
             let canvasContainer = document.createElement('div');
             canvasContainer.style.display = 'flex';
             canvasContainer.style.justifyContent = 'center';
             canvasContainer.style.alignItems = 'center';
             canvasContainer.style.margin = 'auto';
             canvasContainer.appendChild(canvas);
-
             previewElement.appendChild(canvasContainer);
+
           });
         });
       };

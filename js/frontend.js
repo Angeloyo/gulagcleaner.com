@@ -38,7 +38,6 @@ const themeCheck = () => {
     sunIcon.classList.add("display-none");
     sunIcon2.classList.add("display-none");
     whiteBanner.classList.toggle("display-none");
-
 }
 
 // Manual theme switch
